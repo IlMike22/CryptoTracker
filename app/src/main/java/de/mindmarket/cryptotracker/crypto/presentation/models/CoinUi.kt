@@ -2,10 +2,9 @@ package de.mindmarket.cryptotracker.crypto.presentation.models
 
 import androidx.annotation.DrawableRes
 import de.mindmarket.cryptotracker.crypto.domain.Coin
-import de.mindmarket.cryptotracker.util.getDrawableIdForCoin
+import de.mindmarket.cryptotracker.core.presentation.util.getDrawableIdForCoin
 import java.text.NumberFormat
 import java.util.Locale
-import kotlin.math.max
 
 data class CoinUi(
     val id: String,

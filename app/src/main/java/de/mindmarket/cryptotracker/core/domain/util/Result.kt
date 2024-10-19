@@ -1,4 +1,4 @@
-package de.mindmarket.cryptotracker.util
+package de.mindmarket.cryptotracker.core.domain.util
 
 typealias DomainError = Error
 

@@ -1,4 +1,4 @@
-package de.mindmarket.cryptotracker.util
+package de.mindmarket.cryptotracker.core.presentation.util
 
 import de.mindmarket.cryptotracker.R
 
