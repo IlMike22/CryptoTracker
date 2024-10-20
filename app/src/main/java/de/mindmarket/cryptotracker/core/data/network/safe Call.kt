@@ -4,7 +4,6 @@ import de.mindmarket.cryptotracker.core.domain.util.NetworkError
 import de.mindmarket.cryptotracker.core.domain.util.Result
 import io.ktor.client.statement.HttpResponse
 import io.ktor.util.network.UnresolvedAddressException
-import io.ktor.utils.io.CancellationException
 import kotlinx.coroutines.ensureActive
 import kotlinx.serialization.SerializationException
 import kotlin.coroutines.coroutineContext
@@ -22,6 +21,6 @@ suspend inline fun <reified T> safeCall(
         coroutineContext.ensureActive() // rethrow cancellation exception from coroutines..
         return Result.Error(NetworkError.UNKNOWN)
     }
-    
+
     return responseToResult(response)
 }
