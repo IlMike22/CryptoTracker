@@ -14,12 +14,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import de.mindmarket.cryptotracker.crypto.presentation.coin_list.components.CoinListItem
 import de.mindmarket.cryptotracker.crypto.presentation.coin_list.components.previewCoin
-import de.mindmarket.cryptotracker.crypto.presentation.models.CoinUi
 import de.mindmarket.cryptotracker.crypto.presentation.models.toCoinUi
 
 @Composable
