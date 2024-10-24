@@ -58,7 +58,7 @@ private fun CoinListPreview() {
             state = CoinListState(
                 isLoading = false,
                 coins = (1..100).map {
-                    previewCoin.copy(id = it.toString()).toCoinUi()
+                    previewCoin.copy(id = it.toString())
                 }
             ),
             modifier = Modifier.background(MaterialTheme.colorScheme.background)
