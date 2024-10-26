@@ -18,11 +18,13 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import de.mindmarket.cryptotracker.crypto.presentation.coin_list.components.CoinListItem
 import de.mindmarket.cryptotracker.crypto.presentation.coin_list.components.previewCoin
+import de.mindmarket.cryptotracker.crypto.presentation.models.CoinUi
 import de.mindmarket.cryptotracker.crypto.presentation.models.toCoinUi
 
 @Composable
 fun CoinListScreen(
     state: CoinListState,
+    onAction: (CoinListAction) -> Unit,
     modifier: Modifier = Modifier
 ) {
     if (state.isLoading) {
@@ -41,7 +43,9 @@ fun CoinListScreen(
             items(state.coins) { coinUi ->
                 CoinListItem(
                     coinUi = coinUi,
-                    onClick = {},
+                    onClick = {
+                        onAction(CoinListAction.OnCoinClick(coinUi))
+                    },
                     modifier = Modifier.fillMaxWidth()
                 )
                 HorizontalDivider()
@@ -61,7 +65,8 @@ private fun CoinListPreview() {
                     previewCoin.copy(id = it.toString())
                 }
             ),
-            modifier = Modifier.background(MaterialTheme.colorScheme.background)
+            modifier = Modifier.background(MaterialTheme.colorScheme.background),
+            onAction  = {}
         )
     }
 }
