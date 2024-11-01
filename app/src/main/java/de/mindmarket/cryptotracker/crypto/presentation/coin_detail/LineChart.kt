@@ -17,8 +17,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
@@ -119,7 +119,8 @@ fun LineChart(
         val maxXLabelWidth = xLabelTextLayoutResults.maxOfOrNull { it.size.width } ?: 0
         val maxXLabelHeight = xLabelTextLayoutResults.maxOfOrNull { it.size.height } ?: 0
         val maxXLabelLineCount = xLabelTextLayoutResults.maxOfOrNull { it.lineCount } ?: 0
-        val xLabelLineHeight = maxXLabelHeight / maxXLabelLineCount
+        val xLabelLineHeight = if (maxXLabelLineCount > 0) maxXLabelHeight / maxXLabelLineCount
+        else 0
 
         // calculate the viewport (the area where the lines are placed)
         val viewPortHeightPx = size.height -
@@ -288,7 +289,7 @@ fun LineChart(
 
         // now we can draw our path with that information..
 
-        val linePath = androidx.compose.ui.graphics.Path().apply {
+        val linePath = Path().apply {
             if (drawPoints.isNotEmpty()) {
                 moveTo(drawPoints.first().x, drawPoints.first().y)
             }
