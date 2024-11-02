@@ -46,7 +46,7 @@ class CoinListViewModel(
         _state.update { it.copy(selectedCoin = coinUi) }
         viewModelScope.launch {
             dataSource.getCoinsHistory(
-                coinUi.id,
+                coinId = coinUi.id,
                 start = ZonedDateTime.now().minusDays(5),
                 end = ZonedDateTime.now()
             )

@@ -67,6 +67,4 @@ fun AdaptiveCoinListDetailPane(
         },
         modifier = modifier
     )
-
-
 }

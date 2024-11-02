@@ -261,7 +261,7 @@ fun LineChart(
             val x = viewPortLeftX + (it - visibleDataPointsIndices.first) *
                     xLabelWidth + xLabelWidth / 2f
             // [minYValue; maxYValue] -> [0;1]
-            val ratio = dataPoints[it].y - minYValue / (maxYValue - minYValue)
+            val ratio = (dataPoints[it].y - minYValue) / (maxYValue - minYValue)
             val y = viewPortBottomY - (ratio * viewPortHeightPx)
             DataPoint(
                 x = x,
